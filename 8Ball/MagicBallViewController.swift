@@ -29,7 +29,6 @@ class MagicBallViewController: UIViewController {
     private func answerMe (pullOfAnswers answerSet: Set<String>) {
         let answer = answerSet.randomElement()!
         answerLabel.text = answer
-        print(answer)
     }
     
     private lazy var answerView: UIView = {
@@ -124,7 +123,6 @@ class MagicBallViewController: UIViewController {
     }
     
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        print("Device was shaken!")
         answerMe(pullOfAnswers: answersEng)
     }
 }
