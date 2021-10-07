@@ -9,6 +9,8 @@ import UIKit
 
 class MagicBallViewController: UIViewController {
     
+    private let locale = NSLocale.autoupdatingCurrent.languageCode
+    
     private var mainView: UIView = {
         let view = UIView()
         view.toAutoLayout()
@@ -58,13 +60,18 @@ class MagicBallViewController: UIViewController {
     }()
     
     private func setTapGesture() -> UITapGestureRecognizer {
-         let myRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
-         return myRecognizer
+        let myRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
+        return myRecognizer
     }
     
     @objc func imageTapped(tap: UITapGestureRecognizer){
-        let answer = answersEng.randomElement()!
-        answerLabel.text = answer
+        if locale == "ru" {
+            let answer = answersRu.randomElement()!
+            answerLabel.text = answer
+        } else {
+            let answer = answersEn.randomElement()!
+            answerLabel.text = answer
+        }
     }
     
     private var inset: CGFloat { return 20 }
@@ -125,8 +132,13 @@ class MagicBallViewController: UIViewController {
     }
     
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        let answer = answersEng.randomElement()!
-        answerLabel.text = answer
+        if locale == "ru" {
+            let answer = answersRu.randomElement()!
+            answerLabel.text = answer
+        } else {
+            let answer = answersEn.randomElement()!
+            answerLabel.text = answer
+        }
     }
 }
 

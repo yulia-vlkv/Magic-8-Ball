@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal var answersEng: Set<String> = ["As I see it, yes.",
+internal var answersEn: Set<String> = ["As I see it, yes.",
                          "Ask again later.",
                          "Better not tell you now.",
                          "Cannot predict now.",
@@ -27,3 +27,24 @@ internal var answersEng: Set<String> = ["As I see it, yes.",
                          "Yes.",
                          "Yes – definitely.",
                          "You may rely on it."]
+
+internal var answersRu: Set<String> = ["Мне кажется: да.",
+                         "Спроси позже.",
+                         "Лучше сейчас не говорить тебе.",
+                         "Сейчас нельзя предсказать.",
+                         "Сконцентрируйся и спроси снова.",
+                         "Не рассчитывай на это.",
+                         "Бесспорно.",
+                         "Это предрешено.",
+                         "Скорее всего.",
+                         "Мой ответ: нет.",
+                         "По моим данным: нет.",
+                         "Перспективы не очень хорошие.",
+                         "Хорошие перспективы.",
+                         "Пока не ясно, попробуй снова.",
+                         "Знаки указывают: да.",
+                         "Весьма сомнительно.",
+                         "Без сомнения.",
+                         "Да.",
+                         "Определённо да.",
+                         "Можешь быть уверен в этом."]
