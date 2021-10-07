@@ -18,6 +18,7 @@ class MagicBallViewController: UIViewController {
     
     private var ballView: UIImageView = {
         let image = UIImageView(image: UIImage(named: "magic_8_ball"))
+        image.isUserInteractionEnabled = true
         image.toAutoLayout()
         return image
     }()
@@ -33,6 +34,7 @@ class MagicBallViewController: UIViewController {
     
     private lazy var answerView: UIView = {
         let view = UIView()
+        view.isUserInteractionEnabled = true
         view.backgroundColor = .black
         view.layer.masksToBounds = true
         view.layer.insertSublayer(gradient, at: 0)
@@ -64,14 +66,18 @@ class MagicBallViewController: UIViewController {
         return label
     }()
     
+    private func setTapGesture() -> UITapGestureRecognizer {
+         let myRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
+         return myRecognizer
+    }
+    
     private var inset: CGFloat { return 20 }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-        ballView.addGestureRecognizer(tap)
-        ballView.isUserInteractionEnabled = true
+        ballView.addGestureRecognizer(setTapGesture())
+        answerView.addGestureRecognizer(setTapGesture())
         
         layoutSubviews()
     }
