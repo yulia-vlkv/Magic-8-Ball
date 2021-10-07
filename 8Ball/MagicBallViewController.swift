@@ -23,15 +23,6 @@ class MagicBallViewController: UIViewController {
         return image
     }()
     
-    @objc func imageTapped(tap: UITapGestureRecognizer){
-        answerMe(pullOfAnswers: answersEng)
-    }
-    
-    private func answerMe (pullOfAnswers answerSet: Set<String>) {
-        let answer = answerSet.randomElement()!
-        answerLabel.text = answer
-    }
-    
     private lazy var answerView: UIView = {
         let view = UIView()
         view.isUserInteractionEnabled = true
@@ -69,6 +60,11 @@ class MagicBallViewController: UIViewController {
     private func setTapGesture() -> UITapGestureRecognizer {
          let myRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
          return myRecognizer
+    }
+    
+    @objc func imageTapped(tap: UITapGestureRecognizer){
+        let answer = answersEng.randomElement()!
+        answerLabel.text = answer
     }
     
     private var inset: CGFloat { return 20 }
@@ -129,7 +125,8 @@ class MagicBallViewController: UIViewController {
     }
     
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        answerMe(pullOfAnswers: answersEng)
+        let answer = answersEng.randomElement()!
+        answerLabel.text = answer
     }
 }
 
