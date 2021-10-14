@@ -42,6 +42,7 @@ class MagicBallViewController: UIViewController {
             UIColor(named: "darkBlue")?.cgColor ?? UIColor.blue.cgColor,
             UIColor.black.cgColor
             ]
+        gradient.locations = [0.3, 1]
         gradient.startPoint = CGPoint(x: 0.5, y: 0.5)
         gradient.endPoint = CGPoint(x: 1, y: 1)
         return gradient
