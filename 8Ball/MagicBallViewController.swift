@@ -83,10 +83,10 @@ class MagicBallViewController: UIViewController {
         ballView.addGestureRecognizer(setTapGesture())
         answerView.addGestureRecognizer(setTapGesture())
         
-        layoutSubviews()
+        setupViews()
     }
     
-    private func layoutSubviews() {
+    private func setupViews() {
         
         view.addSubview(mainView)
         mainView.addSubview(ballView)
