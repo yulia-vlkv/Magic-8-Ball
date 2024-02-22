@@ -5,3 +5,5 @@ A simple magic ball that helps you make decisions.
 2. Tap the ball or shake the phone. 
 3. Do as the ball says.
 4. Blame the ball if fail.
+
+![image](https://github.com/yulia-vlkv/Magic-8-Ball/assets/82326952/76f329e9-5753-4a52-aaee-52be271f0c6f)
